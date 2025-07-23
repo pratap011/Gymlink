@@ -3,6 +3,7 @@ import React from 'react';
 import api from '../Services/axios';
 import PostCard from '../Components/PostCard';
 import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 
 interface Post {
   username: string;
@@ -37,36 +38,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Navbar */}
-      <nav className="bg-white shadow px-4 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-gray-800">FitSocial</h1>
-        <div className="space-x-4">
-          <button
-            onClick={() => navigate('/feed')}
-            className="text-gray-600 hover:text-black"
-          >
-            Feed
-          </button>
-          <button
-            onClick={() => navigate('/profile')}
-            className="text-gray-600 hover:text-black"
-          >
-            My Profile
-          </button>
-          <button
-            onClick={() => navigate('/findfriends')}
-            className="text-gray-600 hover:text-black"
-          >
-            Find Friends
-          </button>
-          <button
-            onClick={() => navigate('/heatmap')}
-            className="text-gray-400 cursor-not-allowed"
-            disabled
-          >
-            Heatmap (Coming Soon)
-          </button>
-        </div>
-      </nav>
+      <Navbar/>
 
       {/* Main Content */}
       <div className="flex flex-1">

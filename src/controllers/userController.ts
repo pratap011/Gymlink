@@ -60,8 +60,8 @@ export const fetchUserProfile = async (req:AuthRequest,res: Response)=>{
 try{
     const userData=req.user;
     console.log(userData);
-    const posts = await userService.fetchUserProfile({userId: userData._id});
-    res.status(200).json({message:"Profile fetched successfully",posts});
+    const profile = await userService.fetchUserProfile({userId: userData._id});
+    res.status(200).json({message:"Profile fetched successfully",profile});
 }
 catch(err:any){
     res.status(500).json({message:err.message})

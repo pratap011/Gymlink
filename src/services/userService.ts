@@ -56,8 +56,13 @@ export const mapUserToGym = async (userData:mapUserToGymDTO,user:any):  Promise<
 }
 
 export const fetchUserProfile = async (userData:fetchUserProfileDTO)=>{
+    const profile:any = {}
+    const user = await User.findById(userData.userId);
     const posts=await Post.find({userId:userData.userId});
-    return posts;
+    profile.user=user;
+    profile.posts=posts;
+    console.log(profile);
+    return profile;
 }
 
 export const fetchUserFeed = async (user: any) => {

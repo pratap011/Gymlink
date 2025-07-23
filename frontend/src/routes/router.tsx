@@ -6,6 +6,7 @@ import SetupProfile from '../Pages/SetupProfile';
 import Home from '../Pages/Home';
 import ProtectedRoute from './protectedRoute';
 import FindFriends from '../Pages/FindFriends';
+import Profile from '../Pages/Profile';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'findfriends',
         element: <FindFriends />,
+      },
+      {
+        path: 'profile',
+        element: <Profile/>
       }
     ]
   },
